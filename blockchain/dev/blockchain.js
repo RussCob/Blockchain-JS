@@ -2,12 +2,16 @@
 
 //import sha256
 const sha256 = require('sha256');
+const currentNodeUrl = process.argv[3];
 //constructer function
 function Blockchain() {
     //our blockchain will be store here
     this.chain = [];
     //hold all new transaction created
     this.pendingTransactions = [];
+
+    this.currentNodeUrl = currentNodeUrl;
+    this.networkNodes = [];
     //genesis(first block) block (nonce,prevblockhash,hash)
     this.createNewBlock(100, "0", "0");
 }
